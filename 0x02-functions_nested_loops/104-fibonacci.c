@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * Description: advanced task 16 - Fibonacci
  * numLength: length of string
+ * Description: print first 100 Fibonacci numbers
  * @num: operand number
  * Return: number of digits
  */
