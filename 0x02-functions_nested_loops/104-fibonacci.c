@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - entry point
  * numLength - length of string
  * @num: operand number
  *
  * Description: print first 100 Fibonacci numbers
+ * 
  * Return: number of digits
  */
 
