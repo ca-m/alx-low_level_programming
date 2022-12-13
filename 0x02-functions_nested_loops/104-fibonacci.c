@@ -4,8 +4,7 @@
  * numLength - length of string
  * @num: operand number
  *
- * Description: print first 100 Fibonacci numbers
- * 
+ * Description: print first 100 fibonacci numbers
  * Return: number of digits
  */
 
