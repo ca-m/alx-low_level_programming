@@ -2,7 +2,7 @@
 
 /**
  * main - entry point
- * numLength: length of string
+ * numLength - length of string
  * @num: operand number
  *
  * Description: print first 100 Fibonacci numbers
