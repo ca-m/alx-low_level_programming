@@ -1,27 +1,30 @@
 #include "main.h"
 
 /**
- * print_triangle - prints a triangle followed by new ine
+ * print_triangle - prints a triangle followed by new line
+ * Description: prints diagonals
  * @size: size of triangle
+ * Return: void
  */
 
 void print_triangle(int size)
 {
+	int row, hashes, spaces;
+
 	if (size <=0)
 	{
 		_putchar('\n');
-	} else
+	}
+	else
 	{
-		int i, j;
-
-		for (i = 1; i <= size; i++)
+		for (row = 1; row <= size; row++)
 		{
-			for (j = i; j < size; j++)
+			for (spaces = i; spaces < size; spaces++)
 			{
 				_putchar(' ');
 			}
 
-			for (j = 1; j <= i; j++)
+			for (hashes = 1; hashes <= i; hashes++)
 			{
 				_putchar('#');
 			}
