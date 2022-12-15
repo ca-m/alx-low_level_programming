@@ -9,22 +9,22 @@
 
 void print_triangle(int size)
 {
-	int row, hashes, spaces;
-
 	if (size <=0)
 	{
 		_putchar('\n');
 	}
 	else
 	{
-		for (row = 1; row <= size; row++)
+		int i, j;
+
+		for (i = 1; i <= size; i++)
 		{
-			for (spaces = i; spaces < size; spaces++)
+			for (j = i; j < size; j++)
 			{
 				_putchar(' ');
 			}
 
-			for (hashes = 1; hashes <= i; hashes++)
+			for (j = 1; j <= i; j++)
 			{
 				_putchar('#');
 			}
