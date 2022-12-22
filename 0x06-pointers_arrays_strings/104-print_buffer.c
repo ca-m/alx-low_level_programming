@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 /**
- * print_line - prints a s bytes of a buffer
- * @c: buffer to print
- * @s: bytes of a buffer to print
- * @l: line of buffer to print
- * Return: void
+ * print_buffer - prints buffer 10 bytes at a time, starting with
+ *                the byte position, then showing the hex content,
+ *                then displaying printable charcaters.
+ * @b: buffer to be printed.
+ * @size: number of bytes printed from buffer.
  */
 
-void print_line(char *b, int size)
+void print_buffer(char *b, int size)
 {
 	int byte, index;
 
@@ -30,8 +30,8 @@ void print_line(char *b, int size)
 		{
 			if ((index + byte) >= size)
 				break;
-			else if (*(b + index + byte >= 31 &&
-				*(b + index + byte) <= 126)
+			else if (*(b + index + byte) >= 31 &&
+				 *(b + index + byte) <= 126)
 				printf("%c", *(b + index + byte));
 			else
 				printf(".");
