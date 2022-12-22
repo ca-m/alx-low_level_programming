@@ -8,14 +8,14 @@
 char *string_toupper(char *s)
 {
 
-	int i;
+	int index = 0;
 
-	i = 0;
-	while (*(s + i))
+	while (str[index])
 	{
-		if (*(s + i_ >= 'a' && *(s + i) <= 'z')
-			* (s + i) -= 'a' - 'A';
-			i++;
+		if (str[index] >= 'a' && str[index] <= 'z')
+			str[index] -= 32;
+
+		index++;
 	}
-	return (s);
+	return (str);
 }
