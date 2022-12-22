@@ -9,24 +9,37 @@
  * Return: void
  */
 
-void print_line(chr *c, int s, int l)
+void print_line(char *b, int size)
 {
-	int j, k;
+	int byte, index;
 
-	for (j = 0; j <= 9; j++)
+	for (byte = 0; byte < size; byte += 10)
 	{
-		if (j <= s)
-			printf("%02x", c[1 * 10 + j]);
-		else
-			printf("  ");
-		if (j % 2)
-			putchar(' ');
+		printf("%08x: ", byte);
+
+		for (index = 0; index < 10; index++)
+		{
+			if ((index + byte) >= size)
+				printf("  ");
+			else
+				printf("%02x", *(b + index + byte));
+			if ((index % 2) != 0 && index != 0)
+				printf(" ");
+		}
+		for (index = 0; index < 10; index++)
+		{
+			if ((index + byte) >= size)
+				break;
+			else if (*(b + index + byte >= 31 &&
+				*(b + index + byte) <= 126)
+				printf("%c", *(b + index + byte));
+			else
+				printf(".");
+		}
+		if (byte >= size)
+			continue;
+		printf("\n");
 	}
-	for (k = 0; k <= s; k++)
-	{
-		if (c[1 * 10 + k] > 31 && c[1 * 10 + k] < 127)
-			putchr (c[1 * 10 + k]);
-		else
-			putchar('.');
-	}
+	if (size <= 0)
+		printf("\n");
 }
