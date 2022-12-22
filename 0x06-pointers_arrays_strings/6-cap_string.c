@@ -2,11 +2,11 @@
 
 /**
  * cap_string - capitalises all words in a string
- * @s: string
+ * @str: string
  * Return: address of s
  */
 
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
 	int index = 0;
 
@@ -15,7 +15,7 @@ char *cap_string(char *s)
 		while (!(str[index] >= 'a' && str[idex] <= 'z'))
 			index++;
 
-		if (str[index - 1] == ' ' ||
+			if (str[index - 1] == ' ' ||
 			str[index - 1] == '\t' ||
 			str[index - 1] == '\n' ||
 			str[index - 1] == ',' ||
@@ -29,7 +29,8 @@ char *cap_string(char *s)
 			str[index - 1] == '{' ||
 			str[index - 1] == '}' ||
 			index == 0)
-				str[index] -= 32
+				str[index] -= 32;
+
 		index++;
 	}
 
