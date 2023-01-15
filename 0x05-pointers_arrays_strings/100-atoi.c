@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _atoi - convert strig to integer
+ * _atoi - convert string to an integer.
  * @s: pointer to convert
+ *
  * Return: integer
  */
-
 int _atoi(char *s)
 {
 	int c = 0;
@@ -16,9 +16,9 @@ int _atoi(char *s)
 	while (s[c])
 	{
 		if (s[c] == 45)
-			{
-				min *= -1;
-			}
+		{
+			min *= -1;
+		}
 
 		while (s[c] >= 48 && s[c] <= 57)
 		{
