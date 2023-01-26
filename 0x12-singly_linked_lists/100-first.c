@@ -6,7 +6,7 @@
 
 void mySartupFun(void) __attribute__ ((constructor));
 
-/** 
+/**
  * myStartupFun - implement myStartupFun
  */
 
