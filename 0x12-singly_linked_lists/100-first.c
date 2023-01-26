@@ -1,17 +1,13 @@
 #include <stdio.h>
 
-/**
- * myStartupFun - apply constructor so it may be executed before main()
- */
-
-void mySartupFun(void) __attribute__ ((constructor));
+void __attribute__((constructor)) hare(void);
 
 /**
- * myStartupFun - implement myStartupFun
+ * hare - prints string before main function is executed
  */
 
-void myStartupFun(void)
+void hare(void)
 {
-	printf("You're beat! and yet, you must allow,\n");
-	printf("I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n"
+	       "I bore my house upon my back!\n");
 }
