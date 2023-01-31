@@ -4,7 +4,7 @@
 /**
  * pop_listint - deletes head node
  * @head: double pointer
- * Return: empty
+ *Return: empty
  */
 
 int pop_listint(listint_t **head)
@@ -16,7 +16,7 @@ int pop_listint(listint_t **head)
 		return (0);
 	start = *head;
 	*head = start->next;
-	n = start->;
+	n = start->n;
 	free(start);
 	return (n);
 }
