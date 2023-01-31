@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
- * free_listint - frees list listint_t
+ * free_listint - frees listint_t list
  * @head: head of list
- * Return: Null if error
+ * Return: NULL if error
  */
 
 void free_listint(listint_t *head)
