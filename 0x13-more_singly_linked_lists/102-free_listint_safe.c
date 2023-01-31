@@ -1,91 +1,64 @@
 #include "lists.h"
-
-size_t loopes_listint_count(listint_t *head);
-size_t free_listint_safe(listint_t **h);
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * looped_listint_count - counts unique nodes in looped list
- * @head: head of list pointer
- * Return:0 if not looped, otherwise - number of unique nodes
+ * _ra - reallocates memory for array of pointers to nodes in linked list
+ * @list: old list to append
+ * @size: size of new list (always one more than the old list)
+ * @new: new node to add to list
+ * Return: pointer to new list
  */
 
-size_t looped_listint_count(listint_t *head)
+listint_t **_ra(listint_t **list, size_t size, listint_t *new)
 {
-	listint_t *tortoise, *hare;
-	size_t nodes = 1;
+	listint_t **newlist;
+	size_t i;
 
-	if (head == NULL || head->next == NULL)
-		return (0);
-
-	tortoise = head->next;
-	hare = (head->next)->next;
-
-	while (hare)
+	newlist = malloc(size * sizeof(listint_t *));
+	if (newlist == NULL)
 	{
-		if (tortoise == hare)
-		{
-			tortoise = head;
-			while (totoise != hare)
-			{
-				nodes++;
-				tortoise = tortoise->next;
-				hare = hare->next;
-			}
-
-			tortoise = tortoise->next;
-			while (tortoise != hare)
-			{
-				nodes++;
-				tortoise = tortoise->next;
-			}
-
-			return (nodes);
-		}
-
-		tortoise = tortoise->next;
-		hare = (hare->next_->next;
+		free(list);
+		exit(98);
 	}
-
-	return (0);
+	for (i = 0; i < size - 1; i++)
+		newlist[i] = list[i];
+	newlist[i] = new;
+	free(list);
+	return (newlist);
 }
 
 /**
- * free_listint_safe - frees list safely
- * @h: pointer to address of list head
- * Return: size of list freed
- * Description: functions sets head to null
+ * free_listint_safe - frees listint_t linked list.
+ * @head: double pointer to start of list
+ * Return: number of nodes in list
  */
 
-size_t free_listint_safe(listint_t **h)
+size_t free_listint_safe(listint_t **head)
 {
-	listint_t *tmp;
-	size_t nodes, index;
+	size_t i, num = 0;
+	listint_t **list = NULL;
+	listint_t *next;
 
-	nodes = looped_listint_count(*h);
-
-	if (nodes == 0)
+	if (head == NULL || *head == NULL)
+		return (num);
+	while (*head != NULL)
 	{
-		for (; h != NULL && *h != NULL; nodes++)
+		for (i = 0; i < num; i++)
 		{
-			tmp = (*h)->next;
-			free(*h);
-			*h = tmp;
+			if (*head == list[i])
+			{
+				*head = NULL;
+				free(list);
+				return (num);
+			}
 		}
+		num++;
+		list = _ra(list, num, *head);
+		next = (*head)->next;
+		free(*head);
+		*head = next;
 	}
-
-	else
-	{
-		for (index = 0; index < nodes; indes++)
-		{
-			tmp = (*h)->next;
-			free(*h);
-			*h = tmp;
-		}
-
-		*h = NULL;
-	}
-
-	h = NULL;
-
-	return (nodes);
+	free(list);
+	return (num);
 }
