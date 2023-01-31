@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 /**
- * free_listint2 - functions that frees list
- * @head: double pointer of lists
+ * free_listint2 - function that frees a listint_t list
+ * @head: a double pointer of lists
  * Return: void
  */
 
@@ -15,11 +15,8 @@ void free_listint2(listint_t **head)
 		return;
 	while (*head != NULL)
 	{
-		next = (*head != NULL)
-		{
-			next = (*head)->next;
-			free(*head);
-			*head = next;
-		}
+		next = (*head)->next;
+		free(*head);
+		*head = next;
 	}
 }
