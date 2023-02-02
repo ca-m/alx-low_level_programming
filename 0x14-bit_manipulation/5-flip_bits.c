@@ -9,13 +9,18 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int xor = n ^ m, bits = 0;
+	unsigned long int differnce, result;
+	unsigned int j, i;
 
-	while (xor > 0)
+	j = 0;
+	result = 1;
+	differnce = n ^ m;
+	for (i = 0; i < (sizeof(unsigned long int) * 8); i++)
 	{
-		bits += (xor & 1);
-		xor >>= 1;
+		if (result == (differnce & result))
+			j++;
+		result <<= 1;
 	}
 
-	return (bits);
+	return (j);
 }
