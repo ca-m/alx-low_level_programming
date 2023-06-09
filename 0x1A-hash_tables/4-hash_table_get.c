@@ -1,12 +1,13 @@
 #include "hash_tables.h"
 
 /**
-  * hash_table_get - retrieves value associated with key
-  * @ht: table to retrieve value from
-  * @key: key to find value
-  * Return: value associated with key, NULL if key is not found
-  */
-
+ * hash_table_get - retrieve value associated with
+ *                  key in hash table
+ * @ht: pointer to the hash table
+ * @key: key to get the value of.
+ * Return: If the key cannot be matched - NULL
+ *         Otherwise - the value associated with key in ht
+ */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *node;
